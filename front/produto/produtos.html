@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>CADASTRAR PRODUTO</title>
+</head>
+
+<body>
+    <!-- navegation!!! -->
+    <header>
+        <nav>
+            <a id="home" href="../index.html">HOME</a>
+
+            <a href="../usuario/usuarios.html">USUARIOS</a>
+            <a href="../compra/compras.html">COMPRAS</a>
+            <a href="./produtos.html">PRODUTOS</a>
+        </nav>
+    </header>
+
+    <img id="lote" class="title" src="../imgs/produtos.png" alt="">
+
+    <div class="functions">
+        <a href="./cadastrar.html">CADASTRAR</a>
+        <a href="./listar.html">LISTAR</a>
+        <a href="./atualizar.html">ATUALIZAR</a>
+        <a href="./consultarCod.html">CONSULTAR por CóDIGO</a>
+        <a href="./consultarNome.html">CONSULTAR por NoME</a>
+        <a href="./apagar.html">APAGAR</a>
+
+        <p id="WARNING">CLiQUE EM:<img style="scale: 0.6;" src="../imgs/produtos.png" alt="">
+            para CADASTRAR OS <span
+                style="color: rgb(200, 052, 252); font-weight: 900; -webkit-text-stroke: black 1px; text-shadow: 0px 5px 5px rgba(83, 5, 65, 0.767);">PRODUTOS</span>
+
+            da API no SEU BANCO!!!</p>
+    </div>
+</body>
+
+</html>
+
+
+<!-- Missssc, coloque nos html das.. cLASSES!!! OK?-->
+
+<style>
+    body {
+        overflow: hidden;
+    }
+</style>
+
+
+<script>
+    const lote = document.getElementById("lote")
+
+    lote.addEventListener("click", () => {
+        window.location.assign("./cadastrarLote.html")
+    })
+</script>

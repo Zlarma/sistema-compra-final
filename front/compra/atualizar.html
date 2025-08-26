@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <script src="./atualizar.js" defer></script>
+    <title>ATUALIZAR USUARIO</title>
+</head>
+
+<body>
+    <!-- navegation!!! -->
+    <header>
+        <nav>
+            <a id="home" href="../index.html">HOME</a>
+
+            <a href="./usuarios.html">USUARIOS</a>
+            <a href="../compra/compras.html">COMPRAS</a>
+            <a href="../produto/produtos.html">PRODUTOS</a>
+        </nav>
+    </header>
+
+    <!-- main!! -->
+
+    <main>
+        <form>
+            <label for="codCompra">Digite o código da Compra:</label>
+            <br>
+            <input type="text" id="codCompra" placeholder="codigo_usuario_cadastrado">
+            <br><br>
+            <button id="consultar">CONSULTAR</button>
+            <br><br><br><br>
+
+
+
+            <label for="usuario_id">Digite o código do usuario:</label>
+            <br>
+            <input type="text" id="usuario_id" placeholder="cod_user">
+            <br><br>
+
+            <label for="produto_id">Digite o código do Produto:</label>
+            <br>
+            <input type="text" id="produto_id" placeholder="cod_prod">
+
+            <br><br><br><br>
+
+            <label for="quantidade">Digite a quantidade de Produtos:</label>
+            <br>
+            <input type="text" id="quantidade" placeholder="quantidade">
+            <br><br>
+
+            <label for="dt_compra">Digite a data da compra:</label>
+            <br>
+            <input type="date" id="dt_compra" placeholder="dt_compra">
+            <br><br>
+
+            <label for="preco_unit">Digite o preço do produto:</label>
+            <br>
+            <input type="number" id="preco_unit" placeholder="preco_unit">
+            <br><br>
+
+            <label for="desconto">Digite o desconto do produto:</label>
+            <br>
+            <input type="number" id="desconto" placeholder="desconto">
+            <br><br>
+
+            <label for="tipo_pagamento">Digite o tipo de pagamento:</label>
+            <br>
+            <input type="text" id="tipo_pagamento" placeholder="tipo_pagamento">
+            <br><br>
+
+            <button id="atualizar">ATUALIZAR</button>
+            <div id="res"></div>
+        </form>
+    </main>
+
+    </div>
+</body>
+
+</html>

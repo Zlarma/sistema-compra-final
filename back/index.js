@@ -1,0 +1,45 @@
+const express = require("express");
+const app = express();
+const cors = require("cors");
+
+const PORT = 3000;
+const hostname = "localhost";
+
+const conn = require("./db/conn");
+const usuarioController = require("./controller/usuario.controller");
+const produtoController = require("./controller/produto.controller");
+const compraController = require("./controller/compra.controller");
+
+// ------------ Middleware --------------------
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(cors());
+// --------------------------------------------
+
+app.post("/usuario/lote", usuarioController.cadastrarLote);
+app.post("/usuario", usuarioController.cadastrar);
+app.get("/usuario/nome/:pesquisaNome", usuarioController.buscarNome);
+app.get("/usuario/grafico", usuarioController.grafico);
+
+app.post("/produto/lote", produtoController.cadastrarLote);
+app.post("/produto", produtoController.cadastrar);
+
+app.post("/compra", compraController.cadastrar);
+
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "Aplicação rodandando!" });
+});
+
+// --------------------------------------------
+conn
+  .sync()
+  .then(() => {
+    app.listen(PORT, hostname, () => {
+      console.log(`Servidor rodando em http://${hostname}:${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error(`Erro ao rodar o servidor`, err);
+  });
+
+  //  wow!!! Esse formatador de texto chamado "Prettier" é muito bom!!!
