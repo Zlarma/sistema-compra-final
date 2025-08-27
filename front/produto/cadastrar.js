@@ -7,20 +7,20 @@ cadastrar.addEventListener("click", (e) => {
     let descricao = document.getElementById('descricao').value
     let categoria = document.getElementById('categoria').value
     let preco = Number(document.getElementById('preco').value)
-    let desconto = Number(document.getElementById('desconto').value)
+    let percentualDesconto = Number(document.getElementById('percentualDesconto').value)
     let estoque = document.getElementById('estoque').value
     let marca = document.getElementById('marca').value
-    let thumbnail = document.getElementById('thumbnail').value
+    let imagem = document.getElementById('imagem').value
 
     const valores = {
         titulo: titulo,
         descricao: descricao,
         categoria: categoria,
         preco: preco,
-        descontoPorcentagem: desconto,
+        percentualDesconto: percentualDesconto,
         estoque: estoque,
         marca: marca,
-        thumbnail: thumbnail
+        imagem: imagem
     }
     console.log("VALORES ENVIADOS:", valores)
 
@@ -42,10 +42,10 @@ cadastrar.addEventListener("click", (e) => {
             res.innerHTML += `Descrição : ${dados.descricao} <br>`
             res.innerHTML += `Categoria : ${dados.categoria} <br>`
             res.innerHTML += `Preço : R$${dados.preco} <br>`
-            res.innerHTML += `Desconto : ${dados.descontoPorcentagem} <br>`
+            res.innerHTML += `Desconto : ${dados.percentualDesconto} <br>`
             res.innerHTML += `Estoque : ${dados.estoque} <br>`
             res.innerHTML += `Marca : ${dados.marca} <br>`
-            res.innerHTML += `<img style="max-width: 500px;" src="${dados.thumbnail}" alt="imagem do produto">  <br>`
+            res.innerHTML += `<img style="max-width: 500px;" src="${dados.imagem}" alt="imagem do produto">  <br>`
 
         })
         .catch((err) => {

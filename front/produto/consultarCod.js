@@ -17,15 +17,15 @@ consultar.addEventListener("click", (e) => {
 
             console.log("SE essa mensagem estiver aparecendo...  Talvez deu Certo...!")
 
-            res.innerHTML += `<h3><center>Código : ${dados.codProduto} </h3></center><br>`
+            res.innerHTML += `<h3><center>Código : ${dados.id} </h3></center><br>`
             res.innerHTML += `Titulo : ${dados.titulo} <br>`
             res.innerHTML += `Descrição : ${dados.descricao} <br>`
             res.innerHTML += `Categoria : ${dados.categoria} <br>`
             res.innerHTML += `Preço : ${dados.preco} <br>`
-            res.innerHTML += `Desconto : ${dados.descontoPorcentagem} <br>`
-            res.innerHTML += `Estoque : ${dados.stoque} <br>`
+            res.innerHTML += `Desconto : ${dados.percentualDesconto} <br>`
+            res.innerHTML += `Estoque : ${dados.estoque} <br>`
             res.innerHTML += `Marca : ${dados.marca} <br>`
-            res.innerHTML += `<img style="max-width: 500px;" src="${dados.thumbnail}" alt="imagem do produto">  <br>`
+            res.innerHTML += `<img style="max-width: 500px;" src="${dados.imagem}" alt="imagem do produto">  <br>`
 
 
         })

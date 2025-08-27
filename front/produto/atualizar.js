@@ -11,10 +11,10 @@ consultar.addEventListener("click", (e) => {
     let descricao = document.getElementById('descricao')
     let categoria = document.getElementById('categoria')
     let preco = document.getElementById('preco')
-    let desconto = document.getElementById('desconto')
-    let stoque = document.getElementById('stoque')
+    let percentualDesconto = document.getElementById('percentualDesconto')
+    let estoque = document.getElementById('estoque')
     let marca = document.getElementById('marca')
-    let thumbnail = document.getElementById('thumbnail')
+    let imagem = document.getElementById('imagem')
 
 
     fetch(`http://localhost:3000/produto/${codProduto}`)
@@ -25,10 +25,10 @@ consultar.addEventListener("click", (e) => {
             descricao.value = dados.descricao
             categoria.value = dados.categoria
             preco.value = dados.preco
-            desconto.value = dados.desconto
-            stoque.value = dados.stoque
+            percentualDesconto.value = dados.percentualDesconto
+            estoque.value = dados.estoque
             marca.value = dados.marca
-            thumbnail.value = dados.thumbnail
+            imagem.value = dados.imagem
         })
         .catch((err) => {
             console.error('Erro... ?', err)
@@ -46,20 +46,20 @@ atualizar.addEventListener("click", (e) => {
     let descricao = document.getElementById('descricao').value
     let categoria = document.getElementById('categoria').value
     let preco = document.getElementById('preco').value
-    let desconto = document.getElementById('desconto').value
-    let stoque = document.getElementById('stoque').value
+    let percentualDesconto = document.getElementById('percentualDesconto').value
+    let estoque = document.getElementById('estoque').value
     let marca = document.getElementById('marca').value
-    let thumbnail = document.getElementById('thumbnail').value
+    let imagem = document.getElementById('imagem').value
 
     const valores = {
         titulo: titulo,
         descricao: descricao,
         categoria: categoria,
         preco: preco,
-        descontoPorcentagem: desconto,
-        stoque: stoque,
+        percentualDesconto: percentualDesconto,
+        estoque: estoque,
         marca: marca,
-        thumbnail: thumbnail
+        imagem: imagem
     }
 
     console.log("VALORES ENVIADOS:", valores)
@@ -77,15 +77,15 @@ atualizar.addEventListener("click", (e) => {
         .then(resp => resp.json())
         .then(dados => {
             console.log("SE essa mensagem estiver aparecendo...  Talvez deu Certo...!")
-            res.innerHTML += `<h3><center>Código : ${dados.codProduto} </h3></center><br>`
+            res.innerHTML += `<h3><center>Código : ${dados.id} </h3></center><br>`
             res.innerHTML += `Titulo : ${dados.titulo} <br>`
             res.innerHTML += `Descrição : ${dados.descricao} <br>`
             res.innerHTML += `Categoria : ${dados.categoria} <br>`
             res.innerHTML += `Preço : R$${dados.preco} <br>`
-            res.innerHTML += `Desconto : ${dados.descontoPorcentagem} <br>`
-            res.innerHTML += `Estoque : ${dados.stoque} <br>`
+            res.innerHTML += `Desconto : ${dados.percentualDesconto} <br>`
+            res.innerHTML += `Estoque : ${dados.estoque} <br>`
             res.innerHTML += `Marca : ${dados.marca} <br>`
-            res.innerHTML += `<img style="max-width: 500px;" src="${dados.thumbnail}" alt="imagem do produto">  <br>`
+            res.innerHTML += `<img style="max-width: 500px;" src="${dados.imagem}" alt="imagem do produto">  <br>`
 
         })
         .catch((err) => {

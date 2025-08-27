@@ -29,10 +29,12 @@ app.get("/usuario/grafico", usuarioController.grafico);
 // PRODUTO
 app.post("/produto/lote", produtoController.cadastrarLote);
 app.post("/produto", produtoController.cadastrar);
+app.get("/produto", produtoController.listar);
 app.put("/produto/:id", produtoController.atualizar);
 app.delete("/produto/:id", produtoController.apagar);
 app.get("/produto/:id", produtoController.consultarCod);
 app.get("/produto/titulo/:pesquisaTitulo", produtoController.buscarTitulo);
+app.get("/produto/grafico", produtoController.grafico);
 
 // COMPRA
 app.post("/compra", compraController.cadastrar);
