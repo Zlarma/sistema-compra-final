@@ -8,7 +8,7 @@ cadastrar.addEventListener("click", (e) => {
     let categoria = document.getElementById('categoria').value
     let preco = Number(document.getElementById('preco').value)
     let desconto = Number(document.getElementById('desconto').value)
-    let stoque = document.getElementById('stoque').value
+    let estoque = document.getElementById('estoque').value
     let marca = document.getElementById('marca').value
     let thumbnail = document.getElementById('thumbnail').value
 
@@ -18,7 +18,7 @@ cadastrar.addEventListener("click", (e) => {
         categoria: categoria,
         preco: preco,
         descontoPorcentagem: desconto,
-        stoque: stoque,
+        estoque: estoque,
         marca: marca,
         thumbnail: thumbnail
     }
@@ -43,7 +43,7 @@ cadastrar.addEventListener("click", (e) => {
             res.innerHTML += `Categoria : ${dados.categoria} <br>`
             res.innerHTML += `Preço : R$${dados.preco} <br>`
             res.innerHTML += `Desconto : ${dados.descontoPorcentagem} <br>`
-            res.innerHTML += `Estoque : ${dados.stoque} <br>`
+            res.innerHTML += `Estoque : ${dados.estoque} <br>`
             res.innerHTML += `Marca : ${dados.marca} <br>`
             res.innerHTML += `<img style="max-width: 500px;" src="${dados.thumbnail}" alt="imagem do produto">  <br>`
 

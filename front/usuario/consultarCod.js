@@ -18,8 +18,8 @@ consultar.addEventListener("click", (e) => {
         "SE essa mensagem estiver aparecendo...  Talvez deu Certo...!"
       );
 
-      res.innerHTML += `<h3><center>Código : ${dados.codUsuario} </h3></center><br>`;
-      res.innerHTML += `Nome : ${dados.nome} <br>`;
+      res.innerHTML += `<h3><center>Código : ${dados.id} </h3></center><br>`;
+      res.innerHTML += `Nome : ${dados.primeiroNome} <br>`;
       res.innerHTML += `Sobrenome : ${dados.sobrenome} <br>`;
       res.innerHTML += `Idade : ${dados.idade} <br>`;
       res.innerHTML += `Email : ${dados.email} <br>`;
@@ -27,7 +27,7 @@ consultar.addEventListener("click", (e) => {
       res.innerHTML += `Endereço : ${dados.endereco} <br>`;
       res.innerHTML += `Cidade : ${dados.cidade} <br>`;
       res.innerHTML += `Estado : ${dados.estado} <br>`;
-      res.innerHTML += `Data de Nascimento : ${dados.dt_nascimento} <br>`;
+      res.innerHTML += `Data de Nascimento : ${dados.dataNascimento} <br>`;
     })
     .catch((err) => {
       console.error("Erro ao consultar o usuario", err);

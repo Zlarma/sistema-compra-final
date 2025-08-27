@@ -16,9 +16,8 @@ listar.addEventListener("click", (e) => {
         console.log(
           "SE essa mensagem estiver aparecendo...  Talvez deu Certo...!"
         );
-
-        res.innerHTML += `<h3><center>Código : ${dad.codUsuario} </h3></center><br>`;
-        res.innerHTML += `Nome : ${dad.nome} <br>`;
+        res.innerHTML += `<h3><center>Código : ${dad.id} </h3></center><br>`;
+        res.innerHTML += `Nome : ${dad.primeiroNome} <br>`;
         res.innerHTML += `Sobrenome : ${dad.sobrenome} <br>`;
         res.innerHTML += `Idade : ${dad.idade} <br>`;
         res.innerHTML += `Email : ${dad.email} <br>`;
@@ -26,7 +25,7 @@ listar.addEventListener("click", (e) => {
         res.innerHTML += `Endereço : ${dad.endereco} <br>`;
         res.innerHTML += `Cidade : ${dad.cidade} <br>`;
         res.innerHTML += `Estado : ${dad.estado} <br>`;
-        res.innerHTML += `Data de Nascimento : ${dad.dt_nascimento} <br>`;
+        res.innerHTML += `Data de Nascimento : ${dad.dataNascimento} <br>`;
       });
     })
     .catch((err) => {

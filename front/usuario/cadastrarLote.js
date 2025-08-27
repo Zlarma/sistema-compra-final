@@ -1,10 +1,11 @@
+const valores = []
 const res = document.getElementById("res");
 const cadastrar = document.getElementById("cadastrar");
 
 cadastrar.addEventListener("click", (e) => {
   e.preventDefault();
 
-  fetch("https://dummyjson.com/products")
+  fetch("https://dummyjson.com/users")
     .then((resp) => resp.json())
     .then((dadosDummy) => {
       console.log(dadosDummy.users);

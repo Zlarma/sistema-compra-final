@@ -3,7 +3,7 @@ const cadastrar = document.getElementById("cadastrar");
 
 cadastrar.addEventListener("click", (e) => {
   e.preventDefault();
-  let nome = document.getElementById("nome").value;
+  let primeiroNome = document.getElementById("primeiroNome").value;
   let sobrenome = document.getElementById("sobrenome").value;
   let idade = document.getElementById("idade").value;
   let email = document.getElementById("email").value;
@@ -11,10 +11,10 @@ cadastrar.addEventListener("click", (e) => {
   let endereco = document.getElementById("endereco").value;
   let cidade = document.getElementById("cidade").value;
   let estado = document.getElementById("estado").value;
-  let dt_nascimento = document.getElementById("dt_nascimento").value;
+  let dataNascimento = document.getElementById("dataNascimento").value;
 
   const valores = {
-    nome: nome,
+    primeiroNome: primeiroNome,
     sobrenome: sobrenome,
     idade: idade,
     email: email,
@@ -22,7 +22,7 @@ cadastrar.addEventListener("click", (e) => {
     endereco: endereco,
     cidade: cidade,
     estado: estado,
-    dt_nascimento: dt_nascimento,
+    dataNascimento: dataNascimento,
   };
   console.log("VALORES ENVIADOS:", valores);
 
@@ -41,8 +41,8 @@ cadastrar.addEventListener("click", (e) => {
       console.log(
         "SE essa mensagem estiver aparecendo...  Talvez deu Certo...!"
       );
-      res.innerHTML += `<h3><center>Código : ${dados.codUsuario} </h3></center><br>`;
-      res.innerHTML += `Nome : ${dados.nome} <br>`;
+      res.innerHTML += `<h3><center>Código : ${dados.id} </h3></center><br>`;
+      res.innerHTML += `Nome : ${dados.primeiroNome} <br>`;
       res.innerHTML += `Sobrenome : ${dados.sobrenome} <br>`;
       res.innerHTML += `Idade : ${dados.idade} <br>`;
       res.innerHTML += `Email : ${dados.email} <br>`;
@@ -50,7 +50,7 @@ cadastrar.addEventListener("click", (e) => {
       res.innerHTML += `Endereço : ${dados.endereco} <br>`;
       res.innerHTML += `Cidade : ${dados.cidade} <br>`;
       res.innerHTML += `Estado : ${dados.estado} <br>`;
-      res.innerHTML += `Data de Nascimento : ${dados.dt_nascimento} <br>`;
+      res.innerHTML += `Data de Nascimento : ${dados.dataNascimento} <br>`;
     })
     .catch((err) => {
       console.error("Erro ao cadastrar o usuario", err);

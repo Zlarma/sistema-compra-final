@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../js/progGraficUserAge.js" defer></script>
-    <title>Document</title>
-  </head>
 
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./progGraficUserAge.js" defer></script>
+  <title>Document</title>
+</head>
+<!-- navegation!!! -->
+
+<body>
+  <header>
+    <nav>
+      <a id="home" href="../index.html">HOME</a>
+
+      <a href="./usuarios.html">USUARIOS</a>
+      <a href="../compra/compras.html">COMPRAS</a>
+      <a href="../produto/produtos.html">PRODUTOS</a>
+    </nav>
+  </header>
+
+  <main>
+
     <h1>Gráfico Usuário x Idade</h1>
     <br />
     <button id="buscarDados">Buscar</button>
-    <button id="gerarGrafic">Gerar</button>
-    <button onclick="location.href ='./usuario.html'">voltar</button
-    ><br /><br /><br />
 
-    <label for="valIni"
-      >Digite o valor inicial de registros para o gráfico</label
-    >
+    <button id="gerarGrafic">Gerar</button>
+    <br><br>
+    <label style="font-weight: 700;" for="valIni">Digite o valor inicial de registros para o gráfico</label><br><br>
     <input type="number" id="valIni" /><br />
     <br /><br />
     <div class="graficoArea">
@@ -27,5 +38,7 @@
         <canvas id="graficUserAge"></canvas>
       </div>
     </div>
-  </body>
+  </main>
+</body>
+
 </html>

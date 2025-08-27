@@ -5,9 +5,9 @@ const consultar = document.getElementById("consultar");
 consultar.addEventListener("click", (e) => {
   e.preventDefault();
 
-  const codUsuario = document.getElementById("codUsuario").value;
+  const id = document.getElementById("codUser").value;
 
-  let nome = document.getElementById("nome");
+  let primeiroNome = document.getElementById("primeiroNome");
   let sobrenome = document.getElementById("sobrenome");
   let idade = document.getElementById("idade");
   let email = document.getElementById("email");
@@ -15,13 +15,13 @@ consultar.addEventListener("click", (e) => {
   let endereco = document.getElementById("endereco");
   let cidade = document.getElementById("cidade");
   let estado = document.getElementById("estado");
-  let dt_nascimento = document.getElementById("dt_nascimento");
+  let dataNascimento = document.getElementById("dataNascimento");
 
-  fetch(`http://localhost:3000/usuario/${codUsuario}`)
+  fetch(`http://localhost:3000/usuario/${id}`)
     .then((resp) => resp.json())
     .then((dados) => {
       console.log("SE essa mensagem estiver aparecendo...  DEU CEURTO!!!");
-      nome.value = dados.nome;
+      primeiroNome.value = dados.primeiroNome;
       sobrenome.value = dados.sobrenome;
       idade.value = dados.idade;
       email.value = dados.email;
@@ -29,7 +29,7 @@ consultar.addEventListener("click", (e) => {
       endereco.value = dados.endereco;
       cidade.value = dados.cidade;
       estado.value = dados.estado;
-      dt_nascimento.value = dados.dt_nascimento;
+      dataNascimento.value = dados.dataNascimento;
     })
     .catch((err) => {
       console.error("Erro... ?", err);
@@ -38,10 +38,10 @@ consultar.addEventListener("click", (e) => {
 
 atualizar.addEventListener("click", (e) => {
   e.preventDefault();
+  
+  const id = document.getElementById("codUser").value;
 
-  const codUsuario = document.getElementById("codUsuario").value;
-
-  let nome = document.getElementById("nome").value;
+  let primeiroNome = document.getElementById("primeiroNome").value;
   let sobrenome = document.getElementById("sobrenome").value;
   let idade = document.getElementById("idade").value;
   let email = document.getElementById("email").value;
@@ -49,10 +49,10 @@ atualizar.addEventListener("click", (e) => {
   let endereco = document.getElementById("endereco").value;
   let cidade = document.getElementById("cidade").value;
   let estado = document.getElementById("estado").value;
-  let dt_nascimento = document.getElementById("dt_nascimento").value;
+  let dataNascimento = document.getElementById("dataNascimento").value;
 
   const valores = {
-    nome: nome,
+    primeiroNome: primeiroNome,
     sobrenome: sobrenome,
     idade: idade,
     email: email,
@@ -60,13 +60,13 @@ atualizar.addEventListener("click", (e) => {
     endereco: endereco,
     cidade: cidade,
     estado: estado,
-    dt_nascimento: dt_nascimento,
+    dataNascimento: dataNascimento,
   };
 
   res.innerHTML = "";
   res.style.display = "block";
 
-  fetch(`http://localhost:3000/usuario/${codUsuario}`, {
+  fetch(`http://localhost:3000/usuario/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -78,8 +78,8 @@ atualizar.addEventListener("click", (e) => {
       console.log(
         "SE essa mensagem estiver aparecendo...  Talvez deu Certo...!"
       );
-      res.innerHTML += `<h3><center>Código : ${dados.codUsuario} </h3></center><br>`;
-      res.innerHTML += `Nome : ${dados.nome} <br>`;
+      res.innerHTML += `<h3><center>Código : ${dados.id} </h3></center><br>`;
+      res.innerHTML += `Nome : ${dados.primeiroNome} <br>`;
       res.innerHTML += `Sobrenome : ${dados.sobrenome} <br>`;
       res.innerHTML += `Idade : ${dados.idade} <br>`;
       res.innerHTML += `Email : ${dados.email} <br>`;
@@ -87,7 +87,7 @@ atualizar.addEventListener("click", (e) => {
       res.innerHTML += `Endereço : ${dados.endereco} <br>`;
       res.innerHTML += `Cidade : ${dados.cidade} <br>`;
       res.innerHTML += `Estado : ${dados.estado} <br>`;
-      res.innerHTML += `Data de Nascimento : ${dados.dt_nascimento} <br>`;
+      res.innerHTML += `Data de Nascimento : ${dados.dataNascimento} <br>`;
     })
     .catch((err) => {
       console.error("Erro ao atualizar o usuario", err);
