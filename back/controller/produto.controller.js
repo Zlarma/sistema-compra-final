@@ -33,11 +33,11 @@ const grafico = async (req, res) => {
     res.status(500).json({ message: "Erro ao listar dados do gráfico!" });
   }
 };
-const buscarNome = async (req, res) => {
-  const valor = req.params.pesquisaNome;
+const buscarTitulo = async (req, res) => {
+  const valor = req.params.pesquisaTitulo;
   console.log(valor);
   try {
-    const dados = await Produto.findOne({ where: { primeiroNome: valor } });
+    const dados = await Produto.findOne({ where: { titulo: valor } });
     if (dados === null) {
       console.log("Usuário não encontrado!");
       res.status(404).json({ message: "Usuário não encontrado!" });
@@ -62,9 +62,9 @@ const listar = async (req, res) => {
 };
 
 const consultarCod = async (req, res) => {
-  const codUsuario = req.params.id;
+  const id = req.params.id;
   try {
-    const usuario = await Produto.findByPk(codUsuario);
+    const usuario = await Produto.findByPk(id);
     if (usuario) {
       return res.status(200).json(usuario);
     } else {
@@ -80,7 +80,7 @@ const apagar = async (req, res) => {
   try {
     const dados = await Produto.findByPk(id);
     if (dados) {
-      await Produto.destroy({ where: { codUsuario: id } });
+      await Produto.destroy({ where: { id: id } });
       res.status(204).json({ message: "Dados excluídos com sucesso!" });
     } else {
       res.status(404).json({ message: "Dados não encontrados!" });
@@ -97,7 +97,7 @@ const atualizar = async (req, res) => {
   try {
     const dados = await Produto.findByPk(id);
     if (dados) {
-      await Produto.update(valores, { where: { codUsuario: id } });
+      await Produto.update(valores, { where: { id: id } });
       res.status(200).json(dados);
     } else {
       res.status(404).json({ message: "Dados não encontrados!" });
@@ -112,7 +112,7 @@ module.exports = {
   cadastrarLote,
   cadastrar,
   grafico,
-  buscarNome,
+  buscarTitulo,
   listar,
   consultarCod,
   atualizar,

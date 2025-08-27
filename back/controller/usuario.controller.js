@@ -62,9 +62,9 @@ const listar = async (req, res) => {
 };
 
 const consultarCod = async (req, res) => {
-  const codUsuario = req.params.id;
+  const id = req.params.id;
   try {
-    const usuario = await Usuario.findByPk(codUsuario);
+    const usuario = await Usuario.findByPk(id);
     if (usuario) {
       return res.status(200).json(usuario);
     } else {
@@ -80,7 +80,7 @@ const apagar = async (req, res) => {
   try {
     const dados = await Usuario.findByPk(id);
     if (dados) {
-      await Usuario.destroy({ where: { codUsuario: id } });
+      await Usuario.destroy({ where: { id: id } });
       res.status(204).json({ message: "Dados excluídos com sucesso!" });
     } else {
       res.status(404).json({ message: "Dados não encontrados!" });
@@ -97,7 +97,7 @@ const atualizar = async (req, res) => {
   try {
     const dados = await Usuario.findByPk(id);
     if (dados) {
-      await Usuario.update(valores, { where: { codUsuario: id } });
+      await Usuario.update(valores, { where: { id: id } });
       res.status(200).json(dados);
     } else {
       res.status(404).json({ message: "Dados não encontrados!" });

@@ -16,14 +16,25 @@ app.use(express.json());
 app.use(cors());
 // --------------------------------------------
 
+// USUARIO
 app.post("/usuario/lote", usuarioController.cadastrarLote);
 app.post("/usuario", usuarioController.cadastrar);
+app.get("/usuario", usuarioController.listar);
+app.put("/usuario/:id", usuarioController.atualizar);
+app.delete("/usuario/:id", usuarioController.apagar);
+app.get("/usuario/:id", usuarioController.consultarCod);
 app.get("/usuario/nome/:pesquisaNome", usuarioController.buscarNome);
 app.get("/usuario/grafico", usuarioController.grafico);
 
+// PRODUTO
 app.post("/produto/lote", produtoController.cadastrarLote);
 app.post("/produto", produtoController.cadastrar);
+app.put("/produto/:id", produtoController.atualizar);
+app.delete("/produto/:id", produtoController.apagar);
+app.get("/produto/:id", produtoController.consultarCod);
+app.get("/produto/titulo/:pesquisaTitulo", produtoController.buscarTitulo);
 
+// COMPRA
 app.post("/compra", compraController.cadastrar);
 
 app.get("/", (req, res) => {
@@ -42,4 +53,4 @@ conn
     console.error(`Erro ao rodar o servidor`, err);
   });
 
-  //  wow!!! Esse formatador de texto chamado "Prettier" é muito bom!!!
+//  wow!!! Esse formatador de texto chamado "Prettier" é muito bom!!!
