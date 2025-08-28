@@ -37,7 +37,7 @@ cadastrar.addEventListener("click", (e) => {
         .then(resp => resp.json())
         .then(dados => {
             console.log("SE essa mensagem estiver aparecendo...  Talvez deu Certo...!")
-            res.innerHTML += `<h3><center>Código : ${dados.codProduto} </h3></center><br>`
+            res.innerHTML += `<h3><center>Código : ${dados.id} </h3></center><br>`
             res.innerHTML += `Titulo : ${dados.titulo} <br>`
             res.innerHTML += `Descrição : ${dados.descricao} <br>`
             res.innerHTML += `Categoria : ${dados.categoria} <br>`
