@@ -38,6 +38,9 @@ app.get("/produto/grafico", produtoController.grafico);
 
 // COMPRA
 app.post("/compra", compraController.cadastrar);
+app.get("/compra", compraController.listar);
+app.put("/compra/:id", compraController.atualizar);
+app.delete("/compra/:id", compraController.apagar);
 
 app.get("/", (req, res) => {
   res.status(200).json({ message: "Aplicação rodandando!" });

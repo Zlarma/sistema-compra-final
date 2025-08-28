@@ -39,8 +39,8 @@ const buscarTitulo = async (req, res) => {
   try {
     const dados = await Produto.findOne({ where: { titulo: valor } });
     if (dados === null) {
-      console.log("Usuário não encontrado!");
-      res.status(404).json({ message: "Usuário não encontrado!" });
+      console.log("Produto não encontrado!");
+      res.status(404).json({ message: "Produto não encontrado!" });
     } else {
       console.log(dados);
       res.status(200).json(dados);
@@ -64,14 +64,14 @@ const listar = async (req, res) => {
 const consultarCod = async (req, res) => {
   const id = req.params.id;
   try {
-    const usuario = await Produto.findByPk(id);
-    if (usuario) {
-      return res.status(200).json(usuario);
+    const valor = await Produto.findByPk(id);
+    if (valor) {
+      return res.status(200).json(valor);
     } else {
-      return res.status(404).json({ message: "Usuário não encontrado!" });
+      return res.status(404).json({ message: "Produto não encontrado!" });
     }
   } catch (err) {
-    console.error("Erro ao consultar o usuário por código:", err);
+    console.error("Erro ao consultar o produto por código:", err);
     return res.status(500).json({ message: err.message });
   }
 };
