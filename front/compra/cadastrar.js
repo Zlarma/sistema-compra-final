@@ -33,7 +33,8 @@ cadastrar.addEventListener("click", (e) => {
   let preco_unit = Number(document.getElementById("preco_unit").value);
   let desconto = Number(document.getElementById("desconto").value);
   let tipo_pagamento = document.getElementById("tipo_pagamento").value;
-  let total = (preco_unit - (preco_unit * quantidade) * (desconto / 100)).toFixed(2);
+  let total = (preco_unit * quantidade * (1 - desconto / 100)).toFixed(2);
+
   const status = "Pendente";
 
   const valores = {
